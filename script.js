@@ -1,3 +1,5 @@
+
+const API_BASE_URL = "https://beanboutiquecoffeeshop.onrender.com";
 // this is for the session user to localStorage
 function getRegisteredUser() {
   return JSON.parse(localStorage.getItem("beanBoutiqueCurrentUser"));
@@ -961,7 +963,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (registerForm) {
     createCaptcha();
 
-    registerForm.addEventListener("submit", (event) => {
+    registerForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const fullNameInput = document.getElementById("register-fullname");
@@ -990,35 +992,52 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const users = JSON.parse(localStorage.getItem("beanBoutiqueUsers")) || [];
-      const userExists = users.some((user) => user.email === email);
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            fullName,
+            email,
+            password
+          })
+        });
 
-      if (userExists) {
+        const data = await response.json();
+
+        if (!response.ok) {
+          if (registerMessage) {
+            registerMessage.textContent =
+              data.message || "Registration failed. Please try again.";
+            registerMessage.className = "form-message error-message";
+          }
+
+          createCaptcha();
+          return;
+        }
+
+        localStorage.setItem(
+          "beanBoutiqueCurrentUser",
+          JSON.stringify({
+            userId: data.userId,
+            fullName: data.fullName,
+            email: data.email
+          })
+        );
+
+      } catch (error) {
+        console.error("Registration error:", error);
+
         if (registerMessage) {
-          registerMessage.textContent = "This email is already registered.";
+          registerMessage.textContent =
+            "Unable to connect to the server. Please try again.";
           registerMessage.className = "form-message error-message";
         }
-        createCaptcha();
+
         return;
       }
-
-      const newUser = {
-        id: Date.now(),
-        fullName,
-        email,
-        password
-      };
-
-      users.push(newUser);
-      localStorage.setItem("beanBoutiqueUsers", JSON.stringify(users));
-
-      localStorage.setItem(
-        "beanBoutiqueCurrentUser",
-        JSON.stringify({
-          fullName,
-          email
-        })
-      );
 
       localStorage.removeItem("beanBoutiqueGuestDiscountUser");
 
@@ -1046,7 +1065,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginMessage = document.getElementById("login-message");
 
   if (loginForm) {
-    loginForm.addEventListener("submit", (event) => {
+    loginForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const emailInput = document.getElementById("login-email");
@@ -1063,26 +1082,49 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const users = JSON.parse(localStorage.getItem("beanBoutiqueUsers")) || [];
-      const matchedUser = users.find(
-        (user) => user.email === email && user.password === password
-      );
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email,
+            password
+          })
+        });
 
-      if (!matchedUser) {
+        const data = await response.json();
+
+        if (!response.ok) {
+          if (loginMessage) {
+            loginMessage.textContent =
+              data.message || "Invalid email or password.";
+            loginMessage.className = "form-message error-message";
+          }
+          return;
+        }
+
+        localStorage.setItem(
+          "beanBoutiqueCurrentUser",
+          JSON.stringify({
+            userId: data.userId,
+            fullName: data.fullName,
+            email: data.email
+          })
+        );
+
+      } catch (error) {
+        console.error("Login error:", error);
+
         if (loginMessage) {
-          loginMessage.textContent = "Invalid email or password.";
+          loginMessage.textContent =
+            "Unable to connect to the server. Please try again.";
           loginMessage.className = "form-message error-message";
         }
+
         return;
       }
-
-      localStorage.setItem(
-        "beanBoutiqueCurrentUser",
-        JSON.stringify({
-          fullName: matchedUser.fullName,
-          email: matchedUser.email
-        })
-      );
 
       localStorage.removeItem("beanBoutiqueGuestDiscountUser");
 
