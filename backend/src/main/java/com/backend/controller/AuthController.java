@@ -24,15 +24,13 @@ public class AuthController {
         this.userService = userService;
     }
 
+    // REGISTER
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-
         try {
-
             User savedUser = userService.register(user);
 
             Map<String, Object> response = new HashMap<>();
-
             response.put("message", "Registration successful");
             response.put("userId", savedUser.getUserId());
             response.put("fullName", savedUser.getFullName());
@@ -41,9 +39,31 @@ public class AuthController {
             return ResponseEntity.ok(response);
 
         } catch (RuntimeException e) {
+            return ResponseEntity.badRequest()
+                    .body(Map.of("message", e.getMessage()));
+        }
+    }
 
-            return ResponseEntity
-                    .badRequest()
+    // LOGIN
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
+
+        try {
+            String email = loginRequest.get("email");
+            String password = loginRequest.get("password");
+
+            User user = userService.login(email, password);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Login successful");
+            response.put("userId", user.getUserId());
+            response.put("fullName", user.getFullName());
+            response.put("email", user.getEmail());
+
+            return ResponseEntity.ok(response);
+
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest()
                     .body(Map.of("message", e.getMessage()));
         }
     }
