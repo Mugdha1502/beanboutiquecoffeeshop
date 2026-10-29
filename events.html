@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Events & Workshops</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="events">
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coffee-selection.html">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+
+        <ul class="nav-right" id="nav-right">
+          <li class="guest-only"><a href="login.html" class="nav-pill">Login</a></li>
+          <li class="guest-only"><a href="register.html" class="nav-pill nav-pill-highlight">Register</a></li>
+
+          <li class="user-only account-menu" id="account-menu">
+            <button type="button" class="account-btn" id="account-btn">
+              <i class="fas fa-user-circle"></i>
+              <span id="account-name">My Account</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown">
+              <p id="account-email">user@email.com</p>
+              <a href="profile.html">Profile</a>
+              <button type="button" id="logout-btn">Logout</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="cart.html" class="cart-link">
+              <i class="fas fa-cart-shopping"></i>
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner">
+      <div class="container">
+        <h2>Events & Workshops</h2>
+        <p>Upcoming coffee tasting sessions, brewing classes, and meet-the-roaster events with online registration.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-3">
+        <article class="event-card reveal">
+          <img src="images/latte-art-workshop-coffee.webp" alt="Latte art class">
+          <div class="event-body">
+            <h3>Latte Art Workshop</h3>
+            <p>Practice simple latte art patterns and milk steaming techniques with our barista team.</p>
+            <ul class="event-list">
+              <li>Date: 15 April</li>
+              <li>Time: 2:00 PM</li>
+              <li>Seats: 20</li>
+            </ul>
+            <button class="btn btn-primary event-fill-btn" data-event="Latte Art Workshop">Register</button>
+          </div>
+        </article>
+
+        <article class="event-card reveal">
+          <img src="images/coffee-testing.jpeg" alt="Coffee tasting session">
+          <div class="event-body">
+            <h3>Coffee Tasting Session</h3>
+            <p>Explore flavor differences between single-origin coffees and learn about tasting notes.</p>
+            <ul class="event-list">
+              <li>Date: 20 April</li>
+              <li>Time: 5:00 PM</li>
+              <li>Seats: 15</li>
+            </ul>
+            <button class="btn btn-primary event-fill-btn" data-event="Coffee Tasting Session">Register</button>
+          </div>
+        </article>
+
+        <article class="event-card reveal">
+          <img src="images/roasting-workshop.jpg" alt="Meet the roaster event">
+          <div class="event-body">
+            <h3>Meet the Roaster</h3>
+            <p>Learn how roast profiles shape cofee flavor and ask questions about sourcing and roasting.</p>
+            <ul class="event-list">
+              <li>Date: 27 April</li>
+              <li>Time: 4:00 PM</li>
+              <li>Seats: 25</li>
+            </ul>
+            <button class="btn btn-primary event-fill-btn" data-event="Meet the Roaster">Register</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="form-panel reveal">
+        <h3>Online Registration</h3>
+        <p>Fill in the form below to sign up for an event.</p>
+
+        <form class="event-form" id="event-form" action="#" method="post" novalidate>
+          <div>
+            <label for="event-name">Event-name:</label>
+            <input type="text" id="event-name" name="event-name" placeholder="Selected event" required>
+          </div>
+          <div>
+            <label for="event-first-name">First-name:</label>
+            <input type="text" id="event-first-name" name="first-name" placeholder="First Name" required>
+          </div>
+          <div>
+            <label for="event-last-name">Last-name:</label>
+            <input type="text" id="event-last-name" name="last-name" placeholder="Last Name" required>
+          </div>
+          <div>
+            <label for="event-email">Email:</label>
+            <input type="email" id="event-email" name="email" placeholder="Email Address" required>
+          </div>
+          <div>
+            <label for="event-phone">Contact:</label>
+            <input type="text" id="event-phone" name="phone" placeholder="Contact Number" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Registration</button>
+          <p id="event-message" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Bean Boutique</h4>
+        <p>Join our coffee community and learn from every session.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social Links</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

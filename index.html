@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="home">
+
+  <!-- Welcome Modal -->
+  <div class="modal active" id="welcome-modal" aria-hidden="false">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close popup">&times;</button>
+      <div class="modal-icon">
+        <i class="fas fa-gift"></i>
+      </div>
+      <h2>Get 25% Discount on Your First Order!</h2>
+      <p>Sign up with your email and enjoy your welcome discount at Bean Boutique.</p>
+
+      <form class="modal-form" id="discount-form" action="#" method="post">
+        <label for="discount-email">Email Address</label>
+        <input type="email" id="discount-email" name="discount-email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Sign Up &amp; Get Discount</button>
+        <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-left">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="coffee-selection.html">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+
+        <ul class="nav-right" id="nav-right">
+          <li class="guest-only"><a href="login.html" class="nav-pill">Login</a></li>
+          <li class="guest-only"><a href="register.html" class="nav-pill nav-pill-highlight">Register</a></li>
+
+          <li class="user-only account-menu" id="account-menu">
+            <button type="button" class="account-btn" id="account-btn">
+              <i class="fas fa-user-circle"></i>
+              <span id="account-name">My Account</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown">
+              <p id="account-email">user@email.com</p>
+              <a href="profile.html">Profile</a>
+              <button type="button" id="logout-btn">Logout</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="cart.html" class="cart-link">
+              <i class="fas fa-cart-shopping"></i>
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Boutique Coffee Experience</p>
+        <h2>Welcome to Bean Boutique</h2>
+        <p class="hero-text">
+          Enjoy rich artisan coffee, the best brewing tools, and a warm community, all designed for people who truly
+          love coffee.
+        </p>
+        <div class="hero-buttons">
+          <a href="coffee-selection.html" class="btn btn-primary">Explore Coffee</a>
+          <a href="events.html" class="btn btn-outline">View Workshops</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Highlights -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Experience Coffee, Craft and Community</h3>
+          <p>Gain your experinece with Bean Boutique</p>
+        </div>
+
+        <div class="grid grid-3 visual-grid">
+          <article class="visual-card reveal">
+            <img src="images/coffee_beans.jpg" alt="Fresh coffee beans">
+            <div class="visual-overlay">
+              <h4>Fresh Coffee Beans</h4>
+            </div>
+          </article>
+
+          <article class="visual-card reveal">
+            <img src="images/equipment.jpg" alt="Coffee brewing equipment">
+            <div class="visual-overlay">
+              <h4>Brewing Equipment</h4>
+            </div>
+          </article>
+
+          <article class="visual-card reveal">
+            <img src="images/warm_coffee_moments.webp" alt="Warm coffee moments">
+            <div class="visual-overlay">
+              <h4>Warm Coffee Moments</h4>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slideshow -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Featured Products and Events</h3>
+          <p>Explore signature coffee blends, equipment, and community workshops.</p>
+        </div>
+        <div class="slideshow" id="home-slideshow">
+          <div class="slide active">
+            <img src="images/latte_art_workshop.webp" alt="Coffee workshop">
+            <div class="slide-caption">
+              <h3>Coffee Workshops</h3>
+              <p>Learn the art of coffee tasting and brewing through hands-on workshops guided by experts.</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/coffee_event.webp" alt="Coffee events">
+            <div class="slide-caption">
+              <h3>Community Events</h3>
+              <p>Join coffee meetups, tasting sessions, and community gatherings in a warm café environment.</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/featured_coffee.png" alt="Featured coffee product">
+            <div class="slide-caption">
+              <h3>Featured Products</h3>
+              <p>Discover our premium coffee machines and signature blends designed for perfect taste.</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/brewing_equipment.webp" alt="Brewing equipment">
+            <div class="slide-caption">
+              <h3>Brewing Equipment</h3>
+              <p>Explore professional tools and equipment to create the perfect cup at home or café.</p>
+            </div>
+          </div>
+
+          <!-- arrows -->
+          <button type="button" class="slide-arrow slide-prev" id="slide-prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" class="slide-arrow slide-next" id="slide-next" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="slide-dots">
+            <button type="button" class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button type="button" class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button type="button" class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+            <button type="button" class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Cards -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Explore Bean Boutique</h2>
+          <p>Discover our coffee, brewing tools, and experiences.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="info-card reveal">
+            <img src="images/homepage-coffee-selection.jpg" alt="Coffee beans close up">
+            <div class="info-card-body">
+              <h3>Coffee Selection</h3>
+              <p>Unique blends and best coffee flavor</p>
+              <a href="coffee-selection.html" class="text-link">View catalogue</a>
+            </div>
+          </article>
+
+          <article class="info-card reveal">
+            <img src="images/homepage-brewing-equipment.jpg" alt="Coffee brewing tools">
+            <div class="info-card-body">
+              <h3>Brewing Equipment</h3>
+              <p>From espresso machines to French presses</p>
+              <a href="brewing-equipment.html" class="text-link">Shop equipment</a>
+            </div>
+          </article>
+
+          <article class="info-card reveal">
+            <img src="images/homepage-workshop-event.webp" alt="People at coffee tasting event">
+            <div class="info-card-body">
+              <h3>Events &amp; Workshops</h3>
+              <p>Register online for coffee tasting sessions, classes, and meet-the-roaster events.</p>
+              <a href="events.html" class="text-link">See events</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Why Choose Bean Boutique</h3>
+          <p>Simple, high-quality coffee experiences built around community and care.</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="feature-box reveal">
+            <i class="fas fa-seedling"></i>
+            <h4>Freshly Roasted</h4>
+            <p>Small batches for better freshness and deeper flavor.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <i class="fas fa-award"></i>
+            <h4>Curated Quality</h4>
+            <p>Carefully selected beans and equipment for everyday brewing.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <i class="fas fa-users"></i>
+            <h4>Community Focus</h4>
+            <p>Events, workshops, and a warm space for coffee lovers.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <i class="fas fa-truck-fast"></i>
+            <h4>Future Ready</h4>
+            <p>Delivery in 24 hours service weather its equipment or coffee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plugin: Google Maps -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Find Our Store</h3>
+          <p>Do visit our store</p>
+        </div>
+
+        <div class="map-box reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.589654838243!2d72.8248191750877!3d19.126351282091554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b61f3c7a8df5%3A0x6205a6d5318f0f1d!2sAndheri%20West%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+            loading="lazy" allowfullscreen title="Bean Boutique map location"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Bean Boutique</h4>
+        <p>Fresh coffee, great tools, and a welcoming coffee community.</p>
+        <p>Email: hello@beanboutique.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="coffee-selection.html">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social Links</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

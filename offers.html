@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Special Offers & Subscriptions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="offers">
+  <div class="payment-modal" id="plan-modal" aria-hidden="true">
+    <div class="payment-box">
+      <button type="button" class="payment-close" id="plan-close">&times;</button>
+
+      <h2>Subscribe to <span id="selected-plan-name">Plan</span></h2>
+      <p class="payment-subtext">Fill your details and choose a payment method.</p>
+
+      <form id="plan-form">
+        <div class="payment-form-section">
+          <input type="text" id="subscriber-name" placeholder="Full Name" required>
+          <input type="email" id="subscriber-email" placeholder="Email Address" required>
+          <input type="tel" id="subscriber-phone" placeholder="Phone Number" required>
+          <input type="text" id="subscriber-address" placeholder="Delivery Address" required>
+        </div>
+
+        <div class="payment-methods">
+          <label class="payment-option">
+            <input type="radio" name="plan-payment-method" value="card" checked>
+            <span><i class="fas fa-credit-card"></i> Card Payment</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="plan-payment-method" value="upi">
+            <span><i class="fas fa-mobile-screen-button"></i> UPI</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="plan-payment-method" value="cod">
+            <span><i class="fas fa-money-bill-wave"></i> Cash on Delivery</span>
+          </label>
+        </div>
+
+        <div class="payment-form-section" id="plan-card-fields">
+          <input type="text" id="plan-card-number" placeholder="Card Number">
+          <div class="payment-row">
+            <input type="text" id="plan-card-expiry" placeholder="MM/YY">
+            <input type="text" id="plan-card-cvv" placeholder="CVV">
+          </div>
+        </div>
+
+        <div class="payment-form-section hidden" id="plan-upi-fields">
+          <input type="text" id="plan-upi-id" placeholder="Enter UPI ID">
+        </div>
+
+        <div class="payment-form-section hidden" id="plan-cod-fields">
+          <p class="cod-note">You can pay when your monthly coffee delivery arrives.</p>
+        </div>
+
+        <div class="payment-total">
+          <strong>Total:</strong> <span id="selected-plan-price">₹0</span>/month
+        </div>
+
+        <p id="plan-message" class="payment-message"></p>
+
+        <button type="submit" class="btn btn-primary full-width">
+          Confirm Subscription
+        </button>
+      </form>
+    </div>
+  </div>
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coffee-selection.html">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html" class="active">Offers</a></li>
+        </ul>
+
+        <ul class="nav-right" id="nav-right">
+          <li class="guest-only"><a href="login.html" class="nav-pill">Login</a></li>
+          <li class="guest-only"><a href="register.html" class="nav-pill nav-pill-highlight">Register</a></li>
+
+          <li class="user-only account-menu" id="account-menu">
+            <button type="button" class="account-btn" id="account-btn">
+              <i class="fas fa-user-circle"></i>
+              <span id="account-name">My Account</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown">
+              <p id="account-email">user@email.com</p>
+              <a href="profile.html">Profile</a>
+              <button type="button" id="logout-btn">Logout</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="cart.html" class="cart-link">
+              <i class="fas fa-cart-shopping"></i>
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner">
+      <div class="container">
+        <h2>Special Offers & Subscriptions</h2>
+        <p>Promotions, discounts, and regular coffee delivery plans with clear benefits.</p>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Special Offers</h2>
+          <p>Explore current deals and discounts available at Bean Boutique.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="offer-card reveal">
+            <h3>First Order Offer</h3>
+            <p>Get 25% off your first order when you sign up with your email.</p>
+            <a href="register.html" class="btn btn-primary">Claim Offer</a>
+          </article>
+
+          <article class="offer-card reveal">
+            <h3>Weekend Equipment Deal</h3>
+            <p>Enjoy 10% off selected brewing equipment during weekend promotions.</p>
+            <a href="brewing-equipment.html" class="btn btn-primary">Shop Deal</a>
+          </article>
+
+          <article class="offer-card reveal">
+            <h3>Workshop Bundle</h3>
+            <p>Register for a workshop and receive 15% off selected coffee beans.</p>
+            <a href="events.html" class="btn btn-primary">Join Offer</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Subscription Plans</h3>
+          <p>Choose a delivery plan that matches your coffee routine.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="plan-card reveal">
+            <h4>Starter Plan</h4>
+            <p class="plan-price"><strong>₹799</strong>/ month</p>
+            <ul class="plan-list">
+              <li>1 bag of coffee every month</li>
+              <li>Best for casual coffee drinkers</li>
+              <li>Early promotion updates</li>
+            </ul>
+            <button class="btn btn-primary choose-plan-btn" data-plan="Starter Plan" data-price="799">Choose
+              Plan</button>
+          </article>
+
+          <article class="plan-card featured-plan reveal">
+            <h4>Classic Plan</h4>
+            <p class="plan-price"><strong>₹1,499</strong>/ month</p>
+            <ul class="plan-list">
+              <li>2 bags of coffee every month</li>
+              <li>Free local delivery</li>
+              <li>Seasonal roast access</li>
+            </ul>
+            <button class="btn btn-primary choose-plan-btn" data-plan="Classic Plan" data-price="1499">Choose
+              Plan</button>
+          </article>
+
+          <article class="plan-card reveal">
+            <h4>Premium Plan</h4>
+            <p class="plan-price"><strong>₹2,499</strong>/ month</p>
+            <ul class="plan-list">
+              <li>3 bags of coffee every month</li>
+              <li>Priority workshop discounts</li>
+              <li>Exclusive small-batch coffees</li>
+            </ul>
+            <button class="btn btn-primary choose-plan-btn" data-plan="Premium Plan" data-price="2499">Choose
+              Plan</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <h3>Connect us here for more </h3>
+        </div>
+
+        <div class="social-feed-widget reveal">
+          <h4>Instagram Feed</h4>
+          <p class="social-feed-text">See our latest coffee photos, brewing moments, and café highlights.</p>
+
+          <div class="instagram-widget">
+            <iframe src="https://www.instagram.com/p/C5u3G2Qv-example/embed" loading="lazy"
+              style="border: none; overflow: hidden;">
+            </iframe>
+          </div>
+          <a href="https://www.instagram.com/" target="_blank" class="btn btn-primary">
+            Visit Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Bean Boutique</h4>
+        <p>Flexible subscription plans for fresh coffee delivery.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="coffee-selection.html">Coffee</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social Links</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

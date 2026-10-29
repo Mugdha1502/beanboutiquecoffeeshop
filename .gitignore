@@ -1,0 +1,27 @@
+# Java / Maven
+backend/target/
+target/
+*.class
+*.jar
+
+# Local database credentials
+backend/src/main/resources/application.properties
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

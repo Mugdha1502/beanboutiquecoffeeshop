@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="login">
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <nav class="simple-nav">
+        <a href="index.html">Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-section">
+      <div class="auth-box reveal">
+        <h2>Login</h2>
+
+        <form class="auth-form" id="login-form" action="#" method="post" novalidate>
+          <div>
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" placeholder="Email Address" required>
+          </div>
+          <div>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" placeholder="Password" required>
+          </div>
+
+          <p id="login-message" class="form-message"></p>
+
+          <button type="submit" class="btn btn-primary full-width">Login</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

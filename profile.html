@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="profile">
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coffee-selection.html">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+
+        <ul class="nav-right" id="nav-right">
+          <li class="guest-only"><a href="login.html" class="nav-pill">Login</a></li>
+          <li class="guest-only"><a href="register.html" class="nav-pill nav-pill-highlight">Register</a></li>
+
+          <li class="user-only account-menu" id="account-menu">
+            <button type="button" class="account-btn" id="account-btn">
+              <i class="fas fa-user-circle"></i>
+              <span id="account-name">My Account</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown">
+              <p id="account-email">user@email.com</p>
+              <a href="profile.html">Profile</a>
+              <button type="button" id="logout-btn">Logout</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="cart.html" class="cart-link">
+              <i class="fas fa-cart-shopping"></i>
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner">
+      <div class="container">
+        <h2>My Profile</h2>
+        <p>View your account details, cart, discounts, event registrations, and orders.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container profile-layout">
+        <div class="profile-card reveal">
+          <h3>Account Information</h3>
+          <p><strong>Name:</strong> <span id="profile-name">Guest</span></p>
+          <p><strong>Email:</strong> <span id="profile-email">Not available</span></p>
+          <p><strong>Account Type:</strong> <span id="profile-type">Guest</span></p>
+          <p><strong>Discount Status:</strong> <span id="profile-discount">Not Active</span></p>
+        </div>
+
+        <div class="profile-card reveal">
+          <h3>Cart Items</h3>
+          <div id="profile-cart-items">
+            <p>No cart items found.</p>
+          </div>
+        </div>
+
+        <div class="profile-card reveal">
+          <h3>Event Registrations</h3>
+          <div id="profile-events">
+            <p>No event registrations found.</p>
+          </div>
+        </div>
+
+        <div class="profile-card reveal">
+          <h3>Orders</h3>
+          <div id="profile-orders">
+            <p>No orders found.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Bean Boutique</h4>
+        <p>Your coffee journey, all in one place.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="coffee-selection.html">Coffee</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social Links</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

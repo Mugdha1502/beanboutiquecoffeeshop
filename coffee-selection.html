@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique | Coffee Selection</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body data-page="coffee">
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <i class="fas fa-mug-hot"></i>
+        <div class="brand-text">
+          <h1>Bean Boutique</h1>
+          <span>Fresh brews, warm moments</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coffee-selection.html" class="active">Coffee Selection</a></li>
+          <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+
+        <ul class="nav-right" id="nav-right">
+          <li class="guest-only"><a href="login.html" class="nav-pill">Login</a></li>
+          <li class="guest-only"><a href="register.html" class="nav-pill nav-pill-highlight">Register</a></li>
+
+          <li class="user-only account-menu" id="account-menu">
+            <button type="button" class="account-btn" id="account-btn">
+              <i class="fas fa-user-circle"></i>
+              <span id="account-name">My Account</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown">
+              <p id="account-email">user@email.com</p>
+              <a href="profile.html">Profile</a>
+              <button type="button" id="logout-btn">Logout</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="cart.html" class="cart-link">
+              <i class="fas fa-cart-shopping"></i>
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- <main class="page-main">
+    <section class="page-banner">
+      <div class="container">
+        <h2>Coffee Selection</h2>
+        <p>Catalogue of unique blends and single-origin coffees with tasting notes and brewing methods.</p>
+      </div>
+    </section> -->
+
+  <section class="section coffee-section">
+    <div class="container">
+      <h2 class="section-title reveal">Explore Our Coffee Selection</h2>
+      <p class="section-description reveal">Discover our curated selection of premium coffee beans, each with detailed
+        tasting notes and brewing recommendations to help you find your perfect cup.</p>
+      <div class="search-filter-box reveal">
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="coffee-search" placeholder="Search by coffee name, tasting notes, or brew method">
+          </div>
+        </div>
+
+        <div class="filter-box">
+          <label for="coffee-filter">Filter:</label>
+          <select id="coffee-filter">
+            <option value="all">All Coffee</option>
+            <option value="light">Light Roast</option>
+            <option value="medium">Medium Roast</option>
+            <option value="dark">Dark Roast</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-3 product-grid" id="coffee-grid">
+        <article class="product-card reveal coffee-item" data-category="light"
+          data-search="ethiopian yirgacheffe ethiopian floral citrus berry pour-over chemex">
+          <img src="images/Ethiopia-coffee-beans.webp" alt="Ethiopian Yirgacheffe coffee beans">
+          <div class="product-body">
+            <h3>Ethiopian Yirgacheffe</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="Ethiopian Yirgacheffe">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-ethiopian-yirgacheffe">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Bright and delicate single-origin coffee with a floral aroma and smooth
+              finish.</p>
+            <p><strong>Tasting Notes:</strong> Jasmine, citrus, berry.</p>
+            <p><strong>Recommended Brewing:</strong> Pour-over, Chemex.</p>
+
+            <div class="product-footer">
+              <span class="price">₹300</span>
+              <button class="btn btn-primary add-cart-btn" data-name="Ethiopian Yirgacheffe" data-price="300">Add to
+                Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal coffee-item" data-category="medium"
+          data-search="colombian supremo colombian caramel cocoa nuts drip french press">
+          <img src="images/colombian-supremo-beans.webp" alt="Colombian Supremo coffee beans">
+          <div class="product-body">
+            <h3>Colombian Supremo</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="Colombian Supremo">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-colombian-supremo">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Balanced and smooth coffee with a rich body and pleasing sweetness.</p>
+            <p><strong>Tasting Notes:</strong> Caramel, cocoa, roasted nuts.</p>
+            <p><strong>Recommended Brewing:</strong> Drip coffee, French press.</p>
+
+            <div class="product-footer">
+              <span class="price">₹280</span>
+              <button class="btn btn-primary add-cart-btn" data-name="Colombian Supremo" data-price="280">Add to
+                Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal coffee-item" data-category="dark"
+          data-search="sumatra mandheling sumatra earthy spice chocolate espresso moka pot">
+          <img src="images/Sumatra-madheling-beans.jpg" alt="Sumatra Mandheling coffee beans">
+          <div class="product-body">
+            <h3>Sumatra Mandheling</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="Sumatra Mandheling">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-sumatra-mandheling">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Deep and full-bodied coffee with strong character and earthy richness.</p>
+            <p><strong>Tasting Notes:</strong> Earthy, spice, dark chocolate.</p>
+            <p><strong>Recommended Brewing:</strong> Espresso, moka pot.</p>
+
+            <div class="product-footer">
+              <span class="price">₹320</span>
+              <button class="btn btn-primary add-cart-btn" data-name="Sumatra Mandheling" data-price="320">Add to
+                Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal coffee-item" data-category="medium"
+          data-search="house blend hb toffee cocoa espresso drip">
+          <img src="images/house-blend.jpg" alt="House blend coffee">
+          <div class="product-body">
+            <h3>House Blend</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="House Blend">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-house-blend">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Signature blend crafted for everyday drinking with smooth balance.</p>
+            <p><strong>Tasting Notes:</strong> Toffee, cocoa, soft fruit.</p>
+            <p><strong>Recommended Brewing:</strong> Espresso, drip machine.</p>
+
+            <div class="product-footer">
+              <span class="price">₹430</span>
+              <button class="btn btn-primary add-cart-btn" data-name="House Blend" data-price="430">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal coffee-item" data-category="light"
+          data-search="kenya aa kenya blackcurrant citrus honey v60 aeropress">
+          <img src="images/kenya-beans.webp" alt="Kenya AA coffee">
+          <div class="product-body">
+            <h3>Kenya AA</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="Kenya AA">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-kenya-aa">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Bright and juicy coffee with lively acidity and crisp finish.</p>
+            <p><strong>Tasting Notes:</strong> Blackcurrant, citrus, honey.</p>
+            <p><strong>Recommended Brewing:</strong> V60, AeroPress.</p>
+
+            <div class="product-footer">
+              <span class="price">₹350</span>
+              <button class="btn btn-primary add-cart-btn" data-name="Kenya AA" data-price="350">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal coffee-item" data-category="dark"
+          data-search="brazil santos brazil chocolate peanut caramel french press cold brew">
+          <img src="images/brazil-santos-beans.png" alt="Brazil Santos coffee">
+          <div class="product-body">
+            <h3>Brazil Santos</h3>
+
+            <div class="rating-block">
+              <div class="rating-stars interactive-stars" data-product="Brazil Santos">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+              </div>
+              <p class="rating-output" id="rating-output-brazil-santos">No rating yet</p>
+            </div>
+
+            <p><strong>Description:</strong> Mellow coffee with low acidity and an easy, comforting body.</p>
+            <p><strong>Tasting Notes:</strong> Chocolate, peanut, caramel.</p>
+            <p><strong>Recommended Brewing:</strong> French press, cold brew.</p>
+
+            <div class="product-footer">
+              <span class="price">₹380</span>
+              <button class="btn btn-primary add-cart-btn" data-name="Brazil Santos" data-price="380">Add to
+                Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p id="no-results" class="no-results">No coffee found. Try another search.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Bean Boutique</h4>
+        <p>Explore premium beans and find your perfect brew.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Social Links</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
